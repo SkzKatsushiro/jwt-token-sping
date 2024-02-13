@@ -17,14 +17,14 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class JwtService {
 
-    KeyPair keyPair;
+    SecretKeySpec secretKey;
 
     public String extractUsername(String token) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'extractUserName'");
     }
 
-    public Claims extractAll(String token, SecretKeySpec secretKey) {
+    public Claims extractAll(String token) {
             return Jwts
                 .parser()
                 .verifyWith(secretKey)
