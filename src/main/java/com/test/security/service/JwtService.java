@@ -27,10 +27,10 @@ public class JwtService {
     public Claims extractAll(String token, SecretKeySpec secretKey) {
             return Jwts
                 .parser()
-                .setSigningKey(secretKey)
+                .verifyWith(secretKey)
                 .build()
-                .parseClaimsJws(token)
-                .getBody();
+                .parseSignedClaims(token)
+                .getPayload();
     }
 
 }
