@@ -1,5 +1,11 @@
 package com.test.security.domain;
 
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -18,7 +24,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Table(name = "test-app-user", schema = "application-security")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class User {
+public class AppUser extends User {
 
     @Id
     @GeneratedValue
@@ -27,5 +33,4 @@ public class User {
     String firstName;
     String lastName;
     String email;
-    String password;
 }

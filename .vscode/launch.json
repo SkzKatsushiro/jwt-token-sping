@@ -6,20 +6,16 @@
     "configurations": [
         {
             "type": "java",
-            "name": "SecurityApplication",
+            "name": "Current File",
             "request": "launch",
-            "mainClass": "com.test.security.SecurityApplication",
-            "projectName": "JWT Security"
+            "mainClass": "${file}"
         },
         {
             "type": "java",
-            "name": "Spring Boot-SecurityApplication<security>",
+            "name": "SecurityApplication",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
             "mainClass": "com.test.security.SecurityApplication",
-            "projectName": "security",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "projectName": "security"
         }
     ]
 }
