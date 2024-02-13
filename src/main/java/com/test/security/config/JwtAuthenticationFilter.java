@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.service.JwtService;
+import com.test.security.service.JwtService;
 
 import io.micrometer.common.lang.NonNull;
 import jakarta.servlet.FilterChain;
@@ -35,9 +35,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
             return;
         }
-        
+
         final String jwt = authHeader.substring(7); //skips "Bearer "
-        final String username = jwtService.extractUserName(jwt);
+        final String username = jwtService.extractUsername(jwt);
     }
 
 }
