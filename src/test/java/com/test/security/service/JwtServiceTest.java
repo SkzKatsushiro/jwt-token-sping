@@ -33,14 +33,14 @@ public class JwtServiceTest {
 
     @Test
     void extractAll() throws NoSuchAlgorithmException {
-        var secret = "your-512-bit-secret-1";
+        var secret = "This code will generate a random text string of length 256 characters consisting of uppercase letters, lowercase letters, and digits. You can adjust the characters used or include additional characters if needed.";
 
         // Initialize the MAC object with the secret key
         SecretKeySpec secretKey = new SecretKeySpec(
             secret.getBytes(),
          "HmacSHA256");
 
-        var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidXNlcm5hbWUiOiJKb2huIERvZSIsImFkbWluIjp0cnVlLCJhdXRob3JpdGllcyI6WyJBZG1pbiIsIlRlc3QiXSwiaWF0IjoxNTE2MjM5MDIyfQ.Jc5tILjIycDnamgUIuLgSN9ySVAmdYZBnjG7Bl6B1uc";
+        var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidXNlcm5hbWUiOiJKb2huIERvZSIsImFkbWluIjp0cnVlLCJhdXRob3JpdGllcyI6WyJBZG1pbiIsIlRlc3QiXSwiaWF0IjoxNTE2MjM5MDIyfQ.jzK8LAgFyBbPTAv519sjxPWch_vhgxIOAzionov8GOQ";
 
         var claims = jwtService.extractAll(token, secretKey);
 
