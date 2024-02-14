@@ -1,4 +1,5 @@
 /workspaces/jwt-token-sping/src/main/java/com/test/security/SecurityApplication.java
+/workspaces/jwt-token-sping/src/main/java/com/test/security/domain/Role.java
 /workspaces/jwt-token-sping/src/main/java/com/test/security/domain/AppUser.java
 /workspaces/jwt-token-sping/src/main/java/com/test/security/controller/TestBehindAuthenticationController.java
 /workspaces/jwt-token-sping/src/main/java/com/test/security/dto/AuthenticationResponse.java

@@ -21,3 +21,5 @@ spring:
 jwt:
   secret: This code will generate a random text string of length 256 characters consisting of uppercase letters, lowercase letters, and digits. You can adjust the characters used or include additional characters if needed.
   algorithm: HmacSHA256    
+
+springdoc.api-docs.path: /api-docs

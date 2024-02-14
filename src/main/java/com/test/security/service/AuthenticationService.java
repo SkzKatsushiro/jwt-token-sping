@@ -26,13 +26,17 @@ public class AuthenticationService {
     AuthenticationManager authenticationManager;
     
     public AuthenticationResponse register(RegisterRequest registerRequest) {
-        var user = new AppUser(
-            registerRequest.getUserName(),
-             passwordEncoder.encode(registerRequest.getPassword()),
-             null);
-        user.setFirstName(registerRequest.getFirstName());
-        user.setLastName(registerRequest.getLastName());
-        appUserRepository.save(user);
+        
+        var user = AppUser
+        .builder()
+         .username(registerRequest.getUserName())
+         .password(registerRequest.getPassword())
+         .firstName(registerRequest.getFirstName())
+         .lastName(registerRequest.getLastName())
+        .build();
+
+        user = appUserRepository.save(user);
+        
         var jwtToken = jwtService.generateToken(user);
 
         return AuthenticationResponse
@@ -46,10 +50,16 @@ public class AuthenticationService {
             new UsernamePasswordAuthenticationToken(
                 authenticateRequest.getUserName(), 
                 authenticateRequest.getPassword()));
+                
         var user = appUserRepository
         .findByUsername(authenticateRequest.getUserName())
         .orElseThrow();
         
-        return null;
+        var jwtToken = jwtService.generateToken(user);
+
+        return AuthenticationResponse
+        .builder()
+            .token(jwtToken)
+        .build();
     }
 }

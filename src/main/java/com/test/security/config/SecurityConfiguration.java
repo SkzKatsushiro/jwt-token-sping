@@ -28,7 +28,6 @@ import lombok.experimental.FieldDefaults;
 public class SecurityConfiguration {
 
     JwtAuthenticationFilter jwtAuthFilter;
-    AuthenticationProvider authenticationProvider;
     UserDetailsService userDetailsService;
 
     @Bean
@@ -60,7 +59,7 @@ public class SecurityConfiguration {
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .authenticationProvider(authenticationProvider)
+                .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
                 
         return http.build();

@@ -10,8 +10,10 @@ com/test/security/service/JwtService.class
 com/test/security/dto/AuthenticationResponse$AuthenticationResponseBuilder.class
 com/test/security/dto/AuthenticationResponse.class
 com/test/security/dto/AuthenticateRequest.class
+com/test/security/domain/AppUser$AppUserBuilder.class
 com/test/security/filter/JwtAuthenticationFilter.class
 com/test/security/controller/TestBehindAuthenticationController.class
 com/test/security/service/AuthenticationService.class
 com/test/security/dto/RegisterRequest$RegisterRequestBuilder.class
 com/test/security/SecurityApplication.class
+com/test/security/domain/Role.class
