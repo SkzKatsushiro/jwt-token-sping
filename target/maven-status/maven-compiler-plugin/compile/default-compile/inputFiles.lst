@@ -1,8 +1,14 @@
 /workspaces/jwt-token-sping/src/main/java/com/test/security/SecurityApplication.java
-/workspaces/jwt-token-sping/src/main/java/com/test/security/service/UserDetailsServiceImpl.java
-/workspaces/jwt-token-sping/src/main/java/com/test/security/filter/JwtAuthenticationFilter.java
 /workspaces/jwt-token-sping/src/main/java/com/test/security/domain/AppUser.java
-/workspaces/jwt-token-sping/src/main/java/com/test/security/config/JwtConfig.java
+/workspaces/jwt-token-sping/src/main/java/com/test/security/controller/TestBehindAuthenticationController.java
+/workspaces/jwt-token-sping/src/main/java/com/test/security/dto/AuthenticationResponse.java
 /workspaces/jwt-token-sping/src/main/java/com/test/security/config/SecurityConfiguration.java
 /workspaces/jwt-token-sping/src/main/java/com/test/security/repository/AppUserRepository.java
 /workspaces/jwt-token-sping/src/main/java/com/test/security/service/JwtService.java
+/workspaces/jwt-token-sping/src/main/java/com/test/security/service/UserDetailsServiceImpl.java
+/workspaces/jwt-token-sping/src/main/java/com/test/security/dto/AuthenticateRequest.java
+/workspaces/jwt-token-sping/src/main/java/com/test/security/filter/JwtAuthenticationFilter.java
+/workspaces/jwt-token-sping/src/main/java/com/test/security/dto/RegisterRequest.java
+/workspaces/jwt-token-sping/src/main/java/com/test/security/config/JwtConfig.java
+/workspaces/jwt-token-sping/src/main/java/com/test/security/controller/AuthenticationController.java
+/workspaces/jwt-token-sping/src/main/java/com/test/security/service/AuthenticationService.java

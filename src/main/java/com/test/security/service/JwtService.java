@@ -10,6 +10,8 @@ import javax.crypto.spec.SecretKeySpec;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import com.test.security.domain.AppUser;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import lombok.AccessLevel;
@@ -35,6 +37,10 @@ public class JwtService {
                 .expiration(new Date(System.currentTimeMillis() + 1000 + 60 * 24))
                 .signWith(secretKey)
                 .compact();
+    }
+
+    public String generateToken(AppUser user) {
+        return generateToken(user, null);
     }
 
     public boolean isTokenValid(String token, UserDetails userDetails){
@@ -67,4 +73,6 @@ public class JwtService {
         final Claims claims = extractAll(token);
         return claimsResolver.apply(claims);
     }
+
+
 }
