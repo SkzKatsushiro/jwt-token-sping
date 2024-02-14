@@ -1,8 +1,5 @@
 package com.test.security.config;
 
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-
 import javax.crypto.spec.SecretKeySpec;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -23,9 +20,11 @@ public class JwtConfig {
     String algorithm;
 
     @Bean
-     SecretKeySpec secretKeySpec() {
+    SecretKeySpec secretKeySpec() {
         return new SecretKeySpec(
             secret.getBytes(),
             algorithm);
     }
+
+
 }

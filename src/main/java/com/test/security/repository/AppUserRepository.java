@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.test.security.domain.AppUser;
 
 
-interface AppUserRepository extends JpaRepository<AppUser, Integer> {
+public interface AppUserRepository extends JpaRepository<AppUser, Integer> {
 
-    Optional<AppUser> findByUsername(String username);
+  public Optional<AppUser> findByUsername(String username);
 }
