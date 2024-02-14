@@ -1,4 +1,6 @@
+com/test/security/domain/AppUser.class
 com/test/security/config/JwtConfig.class
+com/test/security/repository/AppUserRepository.class
 com/test/security/service/JwtService.class
 com/test/security/SecurityApplication.class
 com/test/security/config/JwtAuthenticationFilter.class
