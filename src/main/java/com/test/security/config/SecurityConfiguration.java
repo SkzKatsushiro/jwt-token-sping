@@ -52,16 +52,20 @@ public class SecurityConfiguration {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
+                .cors().disable()
                 .authorizeRequests()
                 .requestMatchers("/api/v1/auth/**", "/swagger-ui/**", "/api-docs/**")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()
+                .httpBasic()
+                .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authenticationProvider(authenticationProvider())
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+;
                 
         return http.build();
     }
